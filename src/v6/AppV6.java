@@ -5,13 +5,13 @@ import java.util.List;
 
 public class AppV6 {
     public static void main(String[] args) {
-        IOConsole console = new IOConsole();
+        UI ui = new IOGUIResult();
         List<Saving> savers = Arrays.asList(
                 new IOFile(),
                 new IOMemory(),
                 new IOSQLite());
 
-        MultiFlowControl controller = new MultiFlowControl(console, savers);
+        MultiFlowControl controller = new MultiFlowControl(ui, savers);
         controller.control();
     }
 }

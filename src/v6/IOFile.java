@@ -9,7 +9,7 @@ public class IOFile implements Saving {
     private static final Path RESULT_FILE = Path.of("result.txt");
 
     @Override
-    public void save(double result) {
+    public boolean save(double result) {
         String record = "Result: " + result + System.lineSeparator();
         try {
             Files.writeString(
@@ -19,8 +19,10 @@ public class IOFile implements Saving {
                     StandardOpenOption.WRITE,
                     StandardOpenOption.APPEND);
             System.out.println("Result appended to " + RESULT_FILE + ".");
+            return true;
         } catch (IOException exception) {
             System.out.println("Could not save result to " + RESULT_FILE + ": " + exception.getMessage());
+            return false;
         }
     }
 }
