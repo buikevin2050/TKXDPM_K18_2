@@ -1,5 +1,6 @@
 package v6;
 
+import java.time.LocalDateTime;
 import javax.swing.JOptionPane;
 
 public class IOGUI implements UI {
@@ -24,7 +25,7 @@ public class IOGUI implements UI {
     }
 
     @Override
-    public void showResult(double result) {
+    public void showResult(double num1, double num2, double result, LocalDateTime timestamp) {
         JOptionPane.showMessageDialog(null, "Result: " + result);
     }
 

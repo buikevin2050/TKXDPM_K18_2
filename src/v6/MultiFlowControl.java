@@ -1,5 +1,6 @@
 package v6;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -21,7 +22,7 @@ public class MultiFlowControl {
         Multiplication multiplication = new Multiplication(number1, number2);
         double result = multiplication.multiply();
 
-        ui.showResult(result);
+        ui.showResult(number1, number2, result, LocalDateTime.now());
         for (Saving saver : savers) {
             boolean isSuccess = saver.save(result);
             ui.showSaveStatus(saver.getClass().getSimpleName(), isSuccess);
